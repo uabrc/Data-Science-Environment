@@ -22,7 +22,7 @@ pip uninstall horovod
 
 pip install --no-cache-dir horovod
 
-#navigate to an example
+# navigate to an example
 This can be downloaded from https://github.com/uber/horovod
 
 cd /data/user/blazerid/horovod-master/examples/
