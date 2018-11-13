@@ -31,7 +31,7 @@ This can be downloaded from https://github.com/uber/horovod
 
 cd /data/user/blazerid/horovod-master/examples/
 
-mpirun -np 8 -H host1:4,host2:4 -bind-to none -map-by slot -mca pml ob1 -mca btl_tcp_if_include ib0 python keras_mnist.py
+mpirun -np 8 -bind-to none -map-by slot -mca pml ob1 -mca btl_tcp_if_include ib0 python keras_mnist.py
 
 # or run benchmarks
 
@@ -39,4 +39,4 @@ git clone -b cnn_tf_v1.10_compatible https://github.com/tensorflow/benchmarks
 
 cd benchmarks/
 
-mpirun -np 8 -H host1:4,host2:4 -bind-to none -map-by slot -mca pml ob1 -mca btl_tcp_if_include ib0 python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --model resnet101 --batch_size 64 --variable_update horovod
+mpirun -np 8 -bind-to none -map-by slot -mca pml ob1 -mca btl_tcp_if_include ib0 python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --model resnet101 --batch_size 64 --variable_update horovod
