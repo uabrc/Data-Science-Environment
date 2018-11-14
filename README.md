@@ -2,6 +2,15 @@
 
 A yml and a set of instructions to build a functioning horovod environment for distributed learning using keras and tensorflow (and torch on Cheaha
 
+# clone this repo
+
+and cd to the working directory
+
+```
+git clone git@gitlab.rc.uab.edu:wsmonroe/horovod-environment.git
+cd horovod-environment
+```
+
 # request gpu resources (one way of doing it), this needs to be done everytime
 
 `sinteractive --ntasks=8 --time=08:00:00 --exclusive --partition=pascalnodes -N2 --gres=gpu:4`
