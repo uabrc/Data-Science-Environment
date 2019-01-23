@@ -48,23 +48,35 @@ pip uninstall horovod
 pip install --no-cache-dir horovod
 ```
 
-# navigate to an example
+# Download examples
 This can be downloaded from https://github.com/uber/horovod
 
+As always, it is recommended to download data and scripts to your data directory if you would like it to remain persistent
 ```
-cd /data/user/blazerid/horovod-master/examples/
+/data/user/$USER/horovod-master/examples/
+```
 
-mpirun -np 8 -bind-to none -map-by slot -mca pml ob1 -mca btl_tcp_if_include ib0 python keras_mnist.py
+# Run the mnist example
+While it is possible to run the 
+```
+mpirun
+```
+command from the command line, errors are much less likely to occur if the code is run via job script. If the examples are downloaded at the above location, the following example should work
+```
+sbatch horovod-mnist-training.job
 ```
 
 # or run benchmarks
 
 ```
+cd /data/user/$USER
+
 git clone -b cnn_tf_v1.10_compatible https://github.com/tensorflow/benchmarks
+```
 
-cd benchmarks/
-
-mpirun -np 8 -bind-to none -map-by slot -mca pml ob1 -mca btl_tcp_if_include ib0 python scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --model resnet101 --batch_size 64 --variable_update horovod
+assuming the benchmarks were downloaded at the above location, the following job script should run a benchmark test
+```
+sbatch horovod-benchmark.job
 ```
 
 For the resnet101 benchmark test, 
