@@ -65,8 +65,8 @@ command from the command line, errors are much less likely to occur if the code 
 ```
 sbatch horovod-mnist-training.job
 ```
-
-# or run benchmarks
+make sure you are running your sbatch command from the login node.
+# Run benchmarks
 
 ```
 cd /data/user/$USER
@@ -78,6 +78,7 @@ assuming the benchmarks were downloaded at the above location, the following job
 ```
 sbatch horovod-benchmark.job
 ```
+make sure you are running your sbatch command from the login node.
 
 For the resnet101 benchmark test, 
 
