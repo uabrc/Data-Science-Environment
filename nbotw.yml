@@ -167,3 +167,4 @@ dependencies:
     - tqdm==4.26.0
     - unidecode==1.0.22
     - urllib3==1.22
+prefix: /data/user/wsmonroe/.conda/envs/distributedLearning
