@@ -1,14 +1,29 @@
-# horovod-environment
+# Notebook of the week 
 
-A yml and a set of instructions to build a functioning horovod environment for distributed learning using keras and tensorflow (and torch on Cheaha
+A yml and a set of instructions to build a functioning environment for the Research Computing notebook of the week club on Cheaha
 
-# clone this repo
+# clone this repo and update with the job composer
 
-and cd to the working directory
+Copy and paste the following job script into a job composer job on rc.uab.edu
 
 ```
-git clone git@gitlab.rc.uab.edu:wsmonroe/horovod-environment.git
-cd horovod-environment
+#!/bin/bash
+#SBATCH partition=short
+
+srun git clone https://gitlab.rc.uab.edu/rc-data-science/horovod-environment.git /data/user/$USER/nbotw
+
+srun module load Anaconda3/5.3.0
+
+conda env create -f distribLearn2.yml --name nbotw
+
+source activate nbotw
+
+conda update automat
+
+pip uninstall horovod
+
+pip install --no-cache-dir horovod
+
 ```
 
 # request gpu resources (one way of doing it), this needs to be done everytime

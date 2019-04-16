@@ -1,6 +1,5 @@
 name: distributedLearning
 channels:
-  - mpi4py
   - conda-forge
   - anaconda
   - defaults
