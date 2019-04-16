@@ -151,7 +151,6 @@ dependencies:
     - cloudpickle==0.5.6
     - configparser==3.5.0
     - dask==0.19.1
-    - horovod==0.15.0
     - kaggle==1.4.7.1
     - keras==2.2.2
     - keras-vis==0.4.1
@@ -168,4 +167,3 @@ dependencies:
     - tqdm==4.26.0
     - unidecode==1.0.22
     - urllib3==1.22
-prefix: /data/user/wsmonroe/.conda/envs/distributedLearning
