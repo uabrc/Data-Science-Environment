@@ -8,7 +8,7 @@ Copy and paste the following job script into a job composer job on rc.uab.edu
 
 ```
 #!/bin/bash
-#SBATCH partition=pascalnodes
+#SBATCH --partition=pascalnodes
 #SBATCH --gres=gpu:1
 
 git clone https://gitlab.rc.uab.edu/rc-data-science/horovod-environment.git /data/user/$USER/nbotw
