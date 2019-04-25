@@ -32,7 +32,7 @@ Under environment setup, specify
 # Load required modules
 module load cuda10.0/toolkit
 module load Anaconda3
-source activate nbotw
+
 
 ```
 
