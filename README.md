@@ -18,7 +18,7 @@ FOLDER=/data/user/$USER/nbotw
 URL=https://gitlab.rc.uab.edu/rc-data-science/horovod-environment.git
 if [ ! -d "$FOLDER" ] ; then
     git clone "$URL" "$FOLDER"
-conda env create -f nbotw.yml --name nbotw
+conda env create -f /data/user/$USER/nbotw/nbotw.yml --name nbotw
 else
     cd $FOLDER
     git pull "$URL"
