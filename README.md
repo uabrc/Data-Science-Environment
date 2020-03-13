@@ -10,16 +10,20 @@ Copy and paste the following job script into a job composer job on rc.uab.edu
 #!/bin/bash
 #SBATCH --partition=pascalnodes
 #SBATCH --gres=gpu:1
-
-git clone https://gitlab.rc.uab.edu/rc-data-science/horovod-environment.git /data/user/$USER/nbotw
-
+#SBATCH --mem-per-cpu=4000
 module load cuda10.0/toolkit
 module load Anaconda3
 
-cd /data/user/$USER/nbotw
-
-conda env create -f nbotw.yml --name nbotw
-
+FOLDER=/data/user/$USER/nbotw
+URL=https://gitlab.rc.uab.edu/rc-data-science/horovod-environment.git
+if [ ! -d "$FOLDER" ] ; then
+    git clone "$URL" "$FOLDER"
+conda env create -f /data/user/$USER/nbotw/nbotw.yml --name nbotw
+else
+    cd $FOLDER
+    git pull "$URL"
+    conda env update -n nbotw -f /data/user/$USER/nbotw/nbotw.yml
+fi
 ```
 
 # Check to see if the environment works
